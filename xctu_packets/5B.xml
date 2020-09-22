@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>100</repeat_times>
+  <repeat_period>10</repeat_period>
+  <packets_list>
+    <packet name="5 B random packet">
+      <payload>586545496E</payload>
+    </packet>
+  </packets_list>
+</data>

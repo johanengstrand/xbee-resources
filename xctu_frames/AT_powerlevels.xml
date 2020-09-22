@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>1</repeat_times>
+  <repeat_period>500</repeat_period>
+  <frames_list>
+    <frame name="Set PL = 0">
+      <payload>7E00050801504C005A</payload>
+    </frame>
+    <frame name="Set PL = 1">
+      <payload>7E00050801504C0159</payload>
+    </frame>
+    <frame name="Set PL = 2">
+      <payload>7E00050801504C0258</payload>
+    </frame>
+    <frame name="Set PL = 3">
+      <payload>7E00050801504C0357</payload>
+    </frame>
+    <frame name="Set PL = 4">
+      <payload>7E00050801504C0456</payload>
+    </frame>
+    <frame name="Set RX1 PL = 0">
+      <payload>7E001017010013A20041A8D87DFFFE02504C0059</payload>
+    </frame>
+    <frame name="Set RX1 PL = 4">
+      <payload>7E001017010013A20041A8D87DFFFE02504C0455</payload>
+    </frame>
+  </frames_list>
+</data>

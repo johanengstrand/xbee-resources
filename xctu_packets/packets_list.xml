@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>100</repeat_times>
+  <repeat_period>25</repeat_period>
+  <packets_list>
+    <packet name="10 B random packet">
+      <payload>684A726E4B4A4B455872</payload>
+    </packet>
+    <packet name="25 B random packet">
+      <payload>424237556D74626D4A78546B6A334166794B35324836457443</payload>
+    </packet>
+    <packet name="50 B random packet">
+      <payload>577233416F6E627239757474324352504233335A635462686E7A74484E36654B6A4471344C706858487A77476576796B6C33</payload>
+    </packet>
+    <packet name="100 B random packet">
+      <payload>4F7A786664456E58515A636C625639696268303148374130513672783158377943686D5656514E614F7949465946503066626F3779337A6F50736936424472486653336237504A4345324362766D6F694F79615936754B74655947326D6A4644586F6E4E</payload>
+    </packet>
+  </packets_list>
+</data>

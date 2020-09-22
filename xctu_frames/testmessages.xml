@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+  <loop>false</loop>
+  <repeat_times>1</repeat_times>
+  <repeat_period>500</repeat_period>
+  <frames_list>
+    <frame name="Test message (RX1)">
+      <payload>7E001A00010013A20041A8D87D004D65737361676520666F7220525831E4</payload>
+    </frame>
+    <frame name="Test message (Broadcast)">
+      <payload>7E001C000100000000000000000042726F616463617374206D65737361676566</payload>
+    </frame>
+  </frames_list>
+</data>
