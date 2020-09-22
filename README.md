@@ -38,7 +38,7 @@ MY 	     | 0                     | 1                        | Source address for
 These settings will work well when Transparent (AT) mode is used.
 API mode will also be fine with these settings, though explicit addressing is possible in that mode and that is what you will want to use then.
 
-> Setting the coordinator/end-device property may not be strictly required in all situations but is probably good practice.
+> Setting the device role (`CE`), i.e. coordinator/end device may not be strictly required in all situations but is probably good practice.
 
 ## Troubleshooting in XCTU
 
