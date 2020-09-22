@@ -1,3 +1,22 @@
+## Hardware
+
+**IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
+
+### Sparkfun Xbee shields
+
+The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the SoftwareSerial library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+
+Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield.
+
+> If XCTU throws errors you may need to unplug the device, program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
+
+### Arduino Wireless Proto Shield
+
+The official Arduino Wireless Proto Shield requires an empty Arduino sketch to be loaded in order to discover the Xbee radio in XCTU.
+The Xbee unit may need to be disconnected from the shield when programming the Arduino.
+
+Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
+
 ## :gear: Configuring XBee modules in XCTU
 
 Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
@@ -16,35 +35,16 @@ DH 	     | 0       	             | 0       	                | High part of the d
 DL 	     | 1                     | 0                        | Low part of the destination address.
 MY 	     | 0                     | 1                        | Source address for the XBee.
 
-These settings will work well when Transparent (AT) mode is used. 
+These settings will work well when Transparent (AT) mode is used.
 API mode will also be fine with these settings, though explicit addressing is possible in that mode and that is what you will want to use then.
 
 > Setting the coordinator/end-device property may not be strictly required in all situations but is probably good practice.
 
-## Hardware
-
-**IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
-
-### Sparkfun Xbee shields
-
-The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the SoftwareSerial library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
-
-Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield. 
-
-> If XCTU throws errors you may need to unplug the device, program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
-
-### Arduino Wireless Proto Shield
-
-The official Arduino Wireless Proto Shield requires an empty Arduino sketch to be loaded in order to discover the Xbee radio in XCTU. 
-The Xbee unit may need to be disconnected from the shield when programming the Arduino.
-
-Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
-
 ## Troubleshooting in XCTU
 
-If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults: 
+If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
-- Open a serial console window 
+- Open a serial console window
 - Select the serial port of the Xbee unit and open the connection
 - In the input text window, quickly input `+++`. The Xbee radio should respond "OK".
 - Then, quickly input `ATRE` followed by the `Enter` key.
