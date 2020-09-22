@@ -8,8 +8,7 @@ There are a number of important configuration parameters.
 
 You may also wish to set a unique identifying ASCII string for each unit using the `NI` parameter and set the power level using `PL`.
 
-
-For a simple point-to-point network, also configure the following
+For a simple point-to-point network, configure the following
 
 Property | Transmitter XBee      |	Receiver XBee           | Comment
 ---------|-----------------------|--------------------------|---------
@@ -20,7 +19,7 @@ MY 	     | 0                     | 1                        | Source address for
 These settings will work well when Transparent (AT) mode is used. 
 API mode will also be fine with these settings, though explicit addressing is possible in that mode and that is what you will want to use then.
 
-*Setting the coordinator/end-device property may not be strictly required in all situations but is probably good practice...*
+> Setting the coordinator/end-device property may not be strictly required in all situations but is probably good practice.
 
 ## Hardware
 
@@ -52,7 +51,7 @@ If the Xbee radios cannot be discovered by XCTU even though you have followed al
 
 Once successful, remember that the Xbee unit may now be using 9600 baud instead of what was previously configured.
 
-This output "OK" may be somewhat garbled if you have a baud rate mismatch.
-If the Xbee does not respond, try another baud rate.
-Remember to have the correct sketch for your shield loaded per the instructions above.
+> If the Xbee does not respond, try another baud rate.
+
+> Remember to have the correct sketch for your shield loaded per the instructions above.
 
