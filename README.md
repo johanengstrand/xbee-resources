@@ -1,31 +1,34 @@
 ## :gear: Configuring XBee modules in XCTU
 
-Set both Xbee units to "Transparent mode" aka "AT mode".
-Xbee S1 units should be set up in AT mode out of the box.
-For Xbee 3 you must flash the 802.15.4 firmware first, if it has not already been done.
+Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
 
-Set the following properties:
+There are a number of important configuration parameters.
+
+**Make sure that the channel (`CH`), the network (`ID`) and the baud rate (`BD`) are the same across all devices which you wish to be able to communicate with each other.**
+
+You may also wish to set a unique identifying ASCII string for each unit using the `NI` parameter and set the power level using `PL`.
+
+
+For a simple point-to-point network, also configure the following
 
 Property | Transmitter XBee      |	Receiver XBee           | Comment
 ---------|-----------------------|--------------------------|---------
-CH 	     | C	                   | C                        | The channel. Must be the same for both devices.
-ID 	     | 3332   	             | 3332                     | The network. Must be the same for both devices.
 DH 	     | 0       	             | 0       	                | High part of the destination address.
 DL 	     | 1                     | 0                        | Low part of the destination address.
 MY 	     | 0                     | 1                        | Source address for the XBee.
-MM         | 802.15.4 (no ACKs)       | 802.15.4 (no ACKs)        | The MAC mode. Set to strict 802.15.4.
-NI 	     | Transmitter 	         | Receiver 	              | Node identifier in ASCII characters.
-PL       | 0                     |	0 	                    | Power level. Set it to the lowest setting.
-BD         | 57600               |  57600                      | Baud rate. Must be same for XBees and Arduino.
-RO         | 2                   | 2                           | Packetization timeout. Set to 2 character times.
+
+These settings will work well when Transparent (AT) mode is used. 
+API mode will also be fine with these settings, though explicit addressing is possible in that mode and that is what you will want to use then.
 
 ## Hardware
 
-**IMPORTANT:** Most problems likely to stem from baud rate mismatches.
+**IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
 
 ### Sparkfun Xbee shields
 
-**IMPORTANT:** The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the SoftwareSerial library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the SoftwareSerial library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+
+Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield. 
 
 > If XCTU throws errors you may need to unplug the device, program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
 
@@ -33,6 +36,8 @@ RO         | 2                   | 2                           | Packetization t
 
 The official Arduino Wireless Proto Shield requires an empty Arduino sketch to be loaded in order to discover the Xbee radio in XCTU. 
 The Xbee unit may need to be disconnected from the shield when programming the Arduino.
+
+Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
 
 ## Troubleshooting in XCTU
 
