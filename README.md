@@ -1,6 +1,4 @@
-## Hardware
-
-**IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
+## :computer: Hardware
 
 ### Sparkfun Xbee shields
 
@@ -8,7 +6,7 @@ The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun
 
 Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield.
 
-> If XCTU throws errors you may need to unplug the device, program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
+> If XCTU throws errors you may need to re-program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
 
 ### Arduino Wireless Proto Shield
 
@@ -17,7 +15,7 @@ The Xbee unit may need to be disconnected from the shield when programming the A
 
 Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
 
-## :gear: Configuring XBee modules in XCTU
+## :wrench: Configuring XBee modules in XCTU
 
 Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
 
@@ -40,7 +38,15 @@ API mode will also be fine with these settings, though explicit addressing is po
 
 > Setting the device role (`CE`), i.e. coordinator/end device may not be strictly required in all situations but is probably good practice.
 
-## Troubleshooting in XCTU
+## :warning: Troubleshooting in XCTU
+
+**IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
+
+XCTU may ask you to reset the radio module.
+If you are using a shield, you may need to reset the Xbee by shorting the RESET pin to ground.
+RESET is usually pin 5 (ground is on pin 10) but check the data sheet.
+
+![Pin layout on a typical Xbee module](/images/pins.jpg)
 
 If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
