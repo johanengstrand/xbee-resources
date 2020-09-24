@@ -140,4 +140,4 @@ Resetting the radio module in this way rarely solved any problems for me, though
 
 ![Pin layout on a typical Xbee module.](/images/pins.jpg)
 
-If all else fails you may need to download the old, XCTU legacy software, take a look at ![this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees) and ![this](http://arduino.blogs.ua.sapo.pt/1874.html).
+If all else fails you may need to download the old, XCTU legacy software, take a look at ![this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees) ![this](http://arduino.blogs.ua.sapo.pt/1874.html) and this ![this](https://www.instructables.com/id/Restoring-your-broken-XBee/).
