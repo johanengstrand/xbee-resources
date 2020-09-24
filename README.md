@@ -76,6 +76,8 @@ For the best results, do the following:
 The recorded data cannot be exported as a file on your computer, though you can save the graph by right-clicking on it. 
 It is a good idea to take a screenshot of the entire window as well.
 
+It should be noted that the Throughput tool is ![not entirely accurate](https://www.digi.com/support/forum/66513/how-can-we-send-a-100-000-byte-packet-through-xctu).
+
 ![The Throughput tool in XCTU.](/images/throughput.png)
 
 ### Measuring packet loss with the Range Test tool
@@ -86,6 +88,8 @@ The Range test tool can measure packet loss (or rather, packet success rate) as 
 Because of this, the local radio device should be configured in API mode.
 Click the little button to the right of "Select the local radio device" once you have selected the API-enabled Xbee unit in the list in order to discover the remote radio module.
 This can also be done in XCTU's main screen.
+
+If using the 802.15.4 protocol, a jumper wire needs to be connected between the DIN and DOUT pins of the Xbee (usually corresponding to RX/GPIO 0 and TX/GPIO 1 on an Arduino Uno with a shield).
 
 Once the remote radio has been discovered its MAC address should be automatically filled in on the right side (under "Select the remote radio device).
 There are various settings here which are self-explanatory, though it is important to note that the TX interval works a little different than one might think: 
@@ -117,8 +121,8 @@ If XCTU will not recognize your plugged-in Xbee radios, try this:
 
 - First and foremost - **did you try turning it on and off again?** Unplug and replug the USB cable and see if it works then.
 - Remember to have the correct sketch for your shield (if you are using one) loaded on the Arduino per the instructions above.
-- Try different baud rates in the discovery process but remember that choosing *every single baud rate* in the list can cause the discovery process to take quite some time.
-- As a last resort, check *every single* setting and try the discovery again; it is going to take quite some time.
+- Try different baud rates in the discovery process but remember that choosing *every single* baud rate in the list can cause the discovery process to take quite some time.
+- As a last resort, check *every single* setting and try the discovery again; it is probably going to take a *long* time.
 
 **IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
 
