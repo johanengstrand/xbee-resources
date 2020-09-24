@@ -2,6 +2,8 @@
 
 ## Hardware
 
+Here some of the hardware and peripherals are described, along with some tips and tricks that I have amassed during my time working with them.
+
 ### Sparkfun Xbee shields
 
 The Sparkfun Xbee shield requires a certain Arduino sketch (![found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
@@ -26,11 +28,11 @@ Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wire
 The Sparkfun Xbee Explorer USB is probably the best-performing and easiest to use unit if you do not need a microcontroller (or if the Xbee 3's Micropython capabilites in combination with some sensor is sufficient for your purposes).
 I would recommend using the Explorer USB for troubleshooting, instead of the Arduino/shield.
 
-On GNU/Linux this unit shows up as e.g. /dev/ttyUSB0 instead of /dev/ttyACM0 like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
+On GNU/Linux this device shows up as e.g. /dev/ttyUSB0 instead of /dev/ttyACM0 like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
 
 ![The Sparkfun Xbee Explorer USB.](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffr.hobbytronics.co.uk%2Fimage%2Fcache%2Fdata%2Fsparkfun%2Fxbee_explorer_usb-250x250.jpg&f=1&nofb=1)
 
-## Configuring XBee modules in XCTU
+## Configuring Xbee modules in XCTU
 
 Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
 
@@ -59,7 +61,7 @@ API mode will also be fine with these settings, though explicit addressing is po
 
 ## Measurement tools
 
-All measurement tools are available under the Tools menu in XCTU (the wrench button at the top of the screen).
+All measurement tools are available under the Tools menu in XCTU (the wrench button at the top of the window).
 
 ### Measuring data rate with the Throughput tool
 
@@ -108,14 +110,17 @@ It is a good idea to take a screenshot of the entire window as well.
 
 ## Troubleshooting in XCTU
 
-Here are some steps you can try if XCTU will not recognize your plugged-in Xbee radios.
+**If possible, use the Sparkfun Explorer USB (or some other device that does not involve an Arduino or the likes).**
+
+If the Xbee radio is not working correctly, you may try restoring the firmware in XCTU.
+If XCTU will not recognize your plugged-in Xbee radios, try this:
 
 - First and foremost - **did you try turning it on and off again?** Unplug and replug the USB cable and see if it works then.
 - Remember to have the correct sketch for your shield (if you are using one) loaded on the Arduino per the instructions above.
+- Try different baud rates in the discovery process but remember that choosing *every single baud rate* in the list can cause the discovery process to take quite some time.
+- As a last resort, check *every single* setting and try the discovery again; it is going to take quite some time.
 
 **IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
-
-Please try different baud rates in the discovery process but remember that choosing *every single baud rate* in the list can cause the discovery process to take quite some time.
 
 If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
@@ -134,3 +139,5 @@ RESET is usually pin 5 (ground is on pin 10) but check the data sheet.
 Resetting the radio module in this way rarely solved any problems for me, though.
 
 ![Pin layout on a typical Xbee module.](/images/pins.jpg)
+
+If all else fails you may need to download the old, XCTU legacy software, take a look at ![this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees) and ![this](http://arduino.blogs.ua.sapo.pt/1874.html).
