@@ -134,8 +134,8 @@ Once successful, remember that the Xbee unit may now be using 9600 baud instead 
 > If the Xbee does not respond, try another baud rate.
 
 XCTU might at some point ask you to reset the radio module.
-If you are using a shield, you may need to reset the Xbee by shorting the RESET pin to ground.
-RESET is usually pin 5 (ground is on pin 10) but check the data sheet.
+This usually needs to be done by shorting the RESET pin to ground.
+RESET is for most Xbee modules located at pin 5 (ground is on pin 10) but check the data sheet.
 Resetting the radio module in this way rarely solved any problems for me, though.
 
 ![Pin layout on a typical Xbee module.](/images/pins.jpg)
