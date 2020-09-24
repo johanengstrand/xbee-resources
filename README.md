@@ -2,11 +2,13 @@
 
 ### Sparkfun Xbee shields
 
-The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the SoftwareSerial library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
 
 Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield.
 
 > If XCTU throws errors you may need to re-program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
+
+![The Sparkfun Xbee shield.](https://www.rpelectronics.com/Media/400/wrl-09976.jpg)
 
 ### Arduino Wireless Proto Shield
 
@@ -14,6 +16,8 @@ The official Arduino Wireless Proto Shield requires an empty Arduino sketch to b
 The Xbee unit may need to be disconnected from the shield when programming the Arduino.
 
 Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
+
+![The Arduino Wireless Proto Shield.](https://store-cdn.arduino.cc/usa/catalog/product/cache/1/image/520x330/604a3538c15e081937dbfbd20aa60aad/A/0/A000064_featured_2.jpg)
 
 ## Configuring XBee modules in XCTU
 
@@ -48,7 +52,7 @@ All measurement tools are available under the Tools menu in XCTU (the wrench but
 
 ### Measuring data rate with the Throughput tool
 
-The Throughput tool can measure the instant and average transfer ratio (i.e. data rate) in Kbps between two radios.
+The Throughput tool can measure the instant and average transfer ratio (i.e. data rate) in kbps between two radios.
 
 For the best results, do the following:
 - Set up one Xbee in API mode and the other in Transparent (AT) mode.
@@ -72,7 +76,7 @@ This can also be done in XCTU's main screen.
 
 Once the remote radio has been discovered its MAC address should be automatically filled in on the right side (under "Select the remote radio device).
 There are various settings here which are self-explanatory, though it is important to note that the TX interval works a little different than one might think: 
-If the TX interval is set to e.g. 250 ms packets will actually *not* be sent exactly 4 times per second, instead the transmitter will wait for confirmation that the packet was received correctly before sending the next packet, which causes packets to be sent less frequent than the user-defined setting.
+If the TX interval is set to e.g. 250 ms packets will actually *not* be sent exactly 4 times per second, instead the transmitter will wait for confirmation that the packet was received correctly before sending the next packet, which causes packets to be sent less frequently than the user-defined setting.
 
 You can now run the test, though the recorded data is to my knowledge not available as a file on your computer; you can however save the graph itself by right-clicking on it.
 It is a good idea to take a screenshot of the entire window as well.
