@@ -28,7 +28,7 @@ Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wire
 The Sparkfun Xbee Explorer USB is probably the best-performing and easiest to use unit if you do not need a microcontroller (or if the Xbee 3's Micropython capabilites in combination with some sensor is sufficient for your purposes).
 I would recommend using the Explorer USB for troubleshooting, instead of the Arduino/shield.
 
-On GNU/Linux this device shows up as e.g. /dev/ttyUSB0 instead of /dev/ttyACM0 like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
+On GNU/Linux this device shows up as e.g. `/dev/ttyUSB0` instead of `/dev/ttyACM0` like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
 
 ![The Sparkfun Xbee Explorer USB.](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffr.hobbytronics.co.uk%2Fimage%2Fcache%2Fdata%2Fsparkfun%2Fxbee_explorer_usb-250x250.jpg&f=1&nofb=1)
 
@@ -36,7 +36,8 @@ On GNU/Linux this device shows up as e.g. /dev/ttyUSB0 instead of /dev/ttyACM0 l
 
 Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
 
-- Place your Xbee unit(s) in a shield connected to an Arduino or in another USB interface.
+Discovering an Xbee radio in XCTU is quite simple:
+- Place your Xbee unit in a shield connected to an Arduino or in a USB interface.
 - Connect the Arduino/USB interface to your computer with a USB cable and click "Discover radio modules" in the upper left hand corner of XCTU.
 - If your modules do not show up, check the [Troubshooting in XCTU](#troubleshooting-in-xctu) section down below.
    
