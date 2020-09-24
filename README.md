@@ -1,8 +1,10 @@
+**This is not meant to replace any official documentation for the described products. Make sure to read those first, then come back here for my remarks!**
+
 ## Hardware
 
 ### Sparkfun Xbee shields
 
-The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+The Sparkfun Xbee shield requires a certain Arduino sketch (![found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
 
 Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield.
 
@@ -18,6 +20,15 @@ The Xbee unit may need to be disconnected from the shield when programming the A
 Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
 
 ![The Arduino Wireless Proto Shield.](https://store-cdn.arduino.cc/usa/catalog/product/cache/1/image/520x330/604a3538c15e081937dbfbd20aa60aad/A/0/A000064_featured_2.jpg)
+
+### Sparkfun Xbee Explorer USB
+
+The Sparkfun Xbee Explorer USB is probably the best-performing and easiest to use unit if you do not need a microcontroller (or if the Xbee 3's Micropython capabilites in combination with some sensor is sufficient for your purposes).
+I would recommend using the Explorer USB for troubleshooting, instead of the Arduino/shield.
+
+On GNU/Linux this unit shows up as e.g. /dev/ttyUSB0 instead of /dev/ttyACM0 like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
+
+![The Sparkfun Xbee Explorer USB.](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffr.hobbytronics.co.uk%2Fimage%2Fcache%2Fdata%2Fsparkfun%2Fxbee_explorer_usb-250x250.jpg&f=1&nofb=1)
 
 ## Configuring XBee modules in XCTU
 
