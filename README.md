@@ -2,7 +2,7 @@
 
 ### Sparkfun Xbee shields
 
-The Sparkfun Xbee shield requires a certain Arduino sketch (found in `./sparkfun_arduino`) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
+The Sparkfun Xbee shield requires a certain Arduino sketch (found ![here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur.
 
 Baud rates higher than 57 600 are not recommended when using the Sparkfun Xbee shield.
 
