@@ -26,13 +26,12 @@ def main():
 
         device.add_data_received_callback(collect_data)
 
-        f.close()
-
         print("Waiting for data...\n")
 
     finally:
         if device is not None and device.is_open():
             device.close()
+            f.close()
 
 
 if __name__ == '__main__':
