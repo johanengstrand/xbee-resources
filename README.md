@@ -70,15 +70,32 @@ API mode will also be fine with these settings, though explicit addressing is po
 
 All measurement tools are available under the Tools menu in XCTU (the wrench button at the top of the window).
 
+### Measuring channel noise levels with the Spectrum Analyzer tool
+
+The Spectrum Analyzer tool can measure the noise levels of the 16 available channels.
+
+Choose the sampling interval and the number of samples and run the test.
+You can click on one of the channel bars to see the current, maximum, minimum and average noise levels of the channel. 
+
+The recorded data cannot be exported as a file on your computer, though you can save the graph by right-clicking on it. 
+It is a good idea to take a screenshot of the entire window as well.
+
+![The Spectrum Analyzer tool in XCTU.](/images/spectrum.png)
+
+
 ### Measuring data rate with the Throughput tool
 
 The Throughput tool can measure the instant and average transfer ratio (i.e. data rate) in kbps between two radios.
 
-For the best results, do the following:
-- Set up one Xbee in API mode and the other in Transparent (AT) mode.
+Suggestions for doing a Throughput test:
+- Set up at least one of the two Xbee radios in Transparent (AT) mode.
 - In the Throughput tool window, select the AT-configured Xbee as the local radio device.
-- You can now select a secondary local radio device. Select the API-configured Xbee.
+- You can now select a secondary local radio device. Select the other Xbee.
 - You can leave the rest of the settings as-is, though you may want to choose a longer time duration or "Loop infinitely".
+
+Xbee 3 (one in AT mode, one in API mode) at 115200 baud generally scored around 50 kbps using default settings. 
+Increasing the payload yielded (at most) a sustained 80 kbps or so.
+Test some varying payload sizes and observe how the data rate changes. 
 
 The recorded data cannot be exported as a file on your computer, though you can save the graph by right-clicking on it. 
 It is a good idea to take a screenshot of the entire window as well.
@@ -106,18 +123,6 @@ You can now run the test, though the recorded data is to my knowledge not availa
 It is a good idea to take a screenshot of the entire window as well.
 
 ![The Range Test tool in XCTU.](/images/rangetest.png)
-
-### Measuring channel noise levels with the Spectrum Analyzer tool
-
-The Spectrum Analyzer tool can measure the noise levels of the 16 available channels.
-
-Choose the sampling interval and the number of samples and run the test.
-You can click on one of the channel bars to see the current, maximum, minimum and average noise levels of the channel. 
-
-The recorded data cannot be exported as a file on your computer, though you can save the graph by right-clicking on it. 
-It is a good idea to take a screenshot of the entire window as well.
-
-![The Spectrum Analyzer tool in XCTU.](/images/spectrum.png)
 
 ## Troubleshooting in XCTU
 
