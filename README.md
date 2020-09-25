@@ -1,5 +1,11 @@
 **This is not meant to replace any official documentation for the described products. Make sure to read those first, then come back here for my remarks!**
 
+## Official documentation/user guides
+
+![Xbee 3 802.15.4](https://www.digi.com/resources/documentation/digidocs/PDFs/90002273.pdf)
+
+![Xbee Python library](https://xbplib.readthedocs.io/en/latest/user_doc/configuring_the_xbee_device.html)
+
 ## Hardware
 
 Here some of the hardware and peripherals are described, along with some tips and tricks that I have amassed during my time working with them.
