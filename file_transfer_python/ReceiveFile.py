@@ -36,7 +36,6 @@ def main():
 
         print("Waiting for data...\n")
 
-
     finally:
 
         if device is not None and device.is_open():
