@@ -13,10 +13,10 @@ OUTPUT_DIR = Path('/tmp')
 
 
 def main():
-    device = XBeeDevice(PORT, BAUD_RATE)
+    xbee = XBeeDevice(PORT, BAUD_RATE)
 
     try:
-        device.open()
+        xbee.open()
 
         # important to use the correct flags:
         # 'w' - write
@@ -32,30 +32,35 @@ def main():
 
             print("FROM MAC: %s PAYLOAD: %s" % (REMOTE_ADDRESS, PAYLOAD))
 
-        device.add_data_received_callback(collect_data)
+        xbee.add_data_received_callback(collect_data)
 
         print("Waiting for data...\n")
+        input()
 
     finally:
 
-        if device is not None and device.is_open():
-            device.close()
-            f.close()
+        if xbee is not None and xbee.is_open():
+            xbee.close()
 
-            FILE_TYPE = filetype.guess(str(OUTPUT_PATH))
+        f.close()
 
-            if FILE_TYPE is not None:
-                FILE_CATEGORY = filetype.guess_extension(str(OUTPUT_PATH))
-                FILE_NAME = 'received.' + FILE_CATEGORY
-                OUTPUT_PATH = OUTPUT_PATH.rename(OUTPUT_DIR.joinpath(FILE_NAME))
+    FILE_TYPE = filetype.guess(str(OUTPUT_PATH))
 
-                if filetype.is_image(str(OUTPUT_PATH)):
-                    img = mpimg.imread(OUTPUT_PATH)
-                    plt.imshow(img)
-                    plt.axis('off')
-                    plt.show()
+    if FILE_TYPE is not None:
+        FILE_CATEGORY = filetype.guess_extension(str(OUTPUT_PATH))
+        FILE_NAME = 'received.' + FILE_CATEGORY
+        OUTPUT_PATH = OUTPUT_PATH.rename(OUTPUT_DIR.joinpath(FILE_NAME))
 
-            print("\nReceived file %s (file type: %s)" % (OUTPUT_PATH, FILE_TYPE))
+        try:
+            if filetype.is_image(str(OUTPUT_PATH)):
+                img = mpimg.imread(OUTPUT_PATH)
+                plt.imshow(img)
+                plt.axis('off')
+                plt.show()
+        except:
+            print('Image could not be opened!')
+
+    print("\nReceived file %s (file type: %s)" % (OUTPUT_PATH, FILE_TYPE))
 
 
 if __name__ == '__main__':
