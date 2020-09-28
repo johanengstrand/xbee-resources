@@ -18,10 +18,11 @@ def main():
     try:
         xbee.open()
 
+        OUTPUT_PATH = OUTPUT_DIR.joinpath('received_data')
+
         # important to use the correct flags:
         # 'w' - write
         # 'b' - binary, 't' for text
-        OUTPUT_PATH = OUTPUT_DIR.joinpath('received_data')
         f = open(OUTPUT_PATH,'wb')
 
         def collect_data(xbee_message):
@@ -38,27 +39,24 @@ def main():
         input()
 
     finally:
-
         if xbee is not None and xbee.is_open():
             xbee.close()
 
         f.close()
 
-    FILE_TYPE = filetype.guess(str(OUTPUT_PATH))
+    OUTPUT_PATH_STR = str(OUTPUT_PATH)
+    FILE_TYPE = filetype.guess(OUTPUT_PATH_STR)
 
     if FILE_TYPE is not None:
-        FILE_CATEGORY = filetype.guess_extension(str(OUTPUT_PATH))
-        FILE_NAME = 'received.' + FILE_CATEGORY
+        FILE_EXTENSION = filetype.guess_extension(OUTPUT_PATH_STR)
+        FILE_NAME = 'received.' + FILE_EXTENSION
         OUTPUT_PATH = OUTPUT_PATH.rename(OUTPUT_DIR.joinpath(FILE_NAME))
 
-        try:
-            if filetype.is_image(str(OUTPUT_PATH)):
-                img = mpimg.imread(OUTPUT_PATH)
-                plt.imshow(img)
-                plt.axis('off')
-                plt.show()
-        except:
-            print('Image could not be opened!')
+    if filetype.is_image(str(OUTPUT_PATH)):
+        img = mpimg.imread(OUTPUT_PATH)
+        plt.imshow(img)
+        plt.axis('off')
+        plt.show()
 
     print("\nReceived file %s (file type: %s)" % (OUTPUT_PATH, FILE_TYPE))
 

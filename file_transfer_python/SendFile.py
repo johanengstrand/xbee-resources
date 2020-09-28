@@ -7,7 +7,7 @@ BAUD_RATE = 115200
 REMOTE_NODE_ID = "RX1"
 PAYLOAD_BYTES = 100
 
-FILE_PATH = Path('/home/johan/distance0.png')
+FILE_PATH = Path('/home/johan/Test.png')
 
 
 def main():
