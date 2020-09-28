@@ -1,3 +1,4 @@
+from pathlib import Path
 from digi.xbee.devices import XBeeDevice
 
 # GNU/Linux port naming
@@ -5,6 +6,8 @@ PORT = "/dev/ttyACM0"
 BAUD_RATE = 115200
 REMOTE_NODE_ID = "RX1"
 PAYLOAD_BYTES = 100
+
+FILE_PATH = Path('/home/johan/Test.png')
 
 
 def main():
@@ -23,8 +26,7 @@ def main():
         # important to use the correct flags:
         # 'r' - read
         # 'b' - binary, 't' for text
-        f = open('/home/johan/Test.png', 'rb')
-
+        f = open(FILE_PATH, 'rb')
         chunk = f.read(PAYLOAD_BYTES)
         while chunk:
             print("REMOTE MAC: %s PAYLOAD: %s" % (remote_device.get_64bit_addr(), chunk))
