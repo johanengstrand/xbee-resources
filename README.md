@@ -12,7 +12,7 @@ Here some of the hardware and peripherals are described, along with some tips an
 
 ### Sparkfun Xbee shields
 
-The Sparkfun Xbee shield requires a certain Arduino sketch (![found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur. The `NewSoftSerial` library may be better in this regard, so use that if you need fast serial transmission in your project.
+The Sparkfun Xbee shield requires a certain Arduino sketch (![found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur. The `NewSoftSerial` library may be better in this regard.
 
 > If XCTU throws errors you may need to re-program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
 
