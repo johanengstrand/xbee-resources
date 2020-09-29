@@ -1,10 +1,4 @@
-**This is not meant to replace any official documentation for the described products. Make sure to read those first, then come back here for my remarks!**
-
-## Official documentation/user guides
-
-![Xbee 3 802.15.4](https://www.digi.com/resources/documentation/digidocs/PDFs/90002273.pdf)
-
-![Xbee Python library](https://xbplib.readthedocs.io/en/latest/user_doc/configuring_the_xbee_device.html)
+Make sure to read the official documentation, e.g. for ![Xbee 3 802.15.4](https://www.digi.com/resources/documentation/digidocs/PDFs/90002273.pdf).
 
 ## Hardware
 
@@ -63,6 +57,7 @@ These settings will work well when Transparent (AT) mode is used.
 API mode will also be fine with these settings, though explicit addressing is possible in that mode and that is what you will want to use then.
 
 > Setting the device role (`CE`), i.e. coordinator/end device may not be strictly required in all situations but is probably good practice.
+
 
 ## Measurement tools
 
