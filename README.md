@@ -133,6 +133,7 @@ If XCTU will not recognize your plugged-in Xbee radios, try this:
 
 If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
+- Try the manual discovery (the button with the plus sign to the left of the discovery button) 
 - Open a serial console window (from the Tools menu)
 - Select the serial port of the Xbee unit and open the connection
 - In the input text window, quickly input `+++`. The Xbee radio should respond "OK".
@@ -143,10 +144,12 @@ Once successful, remember that the Xbee unit may now be using 9600 baud instead 
 > If the Xbee does not respond, try another baud rate.
 
 XCTU might at some point ask you to reset the radio module.
-This usually needs to be done by shorting the RESET pin to ground.
+This can be done by shorting the RESET pin to ground, in case pressing the reset button on your shield/USB interface has no effect.
 RESET is for most Xbee modules located at pin 5 (ground is on pin 10) but check the data sheet.
-Resetting the radio module in this way rarely solved any problems for me, though.
 
 ![Pin layout on a typical Xbee module.](/images/pins.jpg)
 
+Also, try the Recovery tool in XCTU in order to forcibly flash an unresponsive unit with your desired firmware. 
+
 If all else fails you may need to download the old, XCTU legacy software, take a look at ![this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees) ![this](http://arduino.blogs.ua.sapo.pt/1874.html) and this ![this](https://www.instructables.com/id/Restoring-your-broken-XBee/).
+This may however not work for newer modules.
