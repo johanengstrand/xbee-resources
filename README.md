@@ -117,6 +117,16 @@ It is a good idea to take a screenshot of the entire window as well.
 
 ![The Range Test tool in XCTU.](/images/rangetest.png)
 
+### Misc. tools/examples 
+
+In `./xctu_frames` there are various collections of frames for sending test messages, AT commands etc. from an Xbee radio in API mode. 
+Make sure to change the MAC address of each frame to that of your recipient Xbee.
+A message addressed to an all-zero MAC address will be broadcasted to all available radios.
+
+In `./xctu_packets` one can find some test packets that can be of use for local Xbee radios in Transparent (AT) mode.
+
+Some profiles (consisting of configuration settings) that I have used for various purposes are available in `./xctu_profiles`.
+
 ## Troubleshooting in XCTU
 
 **If possible, use the Sparkfun Explorer USB (or some other device that does not involve an Arduino or the likes).**
@@ -133,18 +143,19 @@ If XCTU will not recognize your plugged-in Xbee radios, try this:
 
 If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
-- Try the manual discovery (the button with the plus sign to the left of the discovery button) 
-- Open a serial console window (from the Tools menu)
-- Select the serial port of the Xbee unit and open the connection
-- In the input text window, quickly input `+++`. The Xbee radio should respond "OK".
-- Then, quickly input `ATRE` followed by the `Enter` key.
+- First, try the manual discovery (the button with the plus sign to the left of the discovery button) 
+- If unsuccessful, open a serial console window (from the Tools menu)
+   - Select the serial port of the Xbee unit and open the connection using the baud rate that you *think* the Xbee is using.
+   - In the input text window, quickly input `+++`. The Xbee radio should respond "OK".
+   - Then, quickly input `ATRE` followed by the `Enter` key.
+   - If the Xbee does not respond, try a different baud rate.
 
 Once successful, remember that the Xbee unit may now be using 9600 baud instead of what was previously configured.
 
 > If the Xbee does not respond, try another baud rate.
 
 XCTU might at some point ask you to reset the radio module.
-This can be done by shorting the RESET pin to ground, in case pressing the reset button on your shield/USB interface has no effect.
+A reset can be performed by shorting the RESET pin to ground, in case pressing the reset button on your shield/USB interface has no effect.
 RESET is for most Xbee modules located at pin 5 (ground is on pin 10) but check the data sheet.
 
 ![Pin layout on a typical Xbee module.](/images/pins.jpg)
