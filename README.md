@@ -1,4 +1,4 @@
-Make sure to read the official documentation, e.g. for ![Xbee 3 802.15.4](https://www.digi.com/resources/documentation/digidocs/PDFs/90002273.pdf).
+Make sure to read the official documentation, e.g. for [Xbee 3 802.15.4](https://www.digi.com/resources/documentation/digidocs/PDFs/90002273.pdf).
 
 ## Hardware
 
@@ -6,7 +6,7 @@ Here some of the hardware and peripherals are described, along with some tips an
 
 ### Sparkfun Xbee shields
 
-The Sparkfun Xbee shield requires a certain Arduino sketch (![found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur. The `NewSoftSerial` library may be better in this regard.
+The Sparkfun Xbee shield requires a certain Arduino sketch ([found here under "The Arduino Sketch"](https://learn.sparkfun.com/tutorials/xbee-shield-hookup-guide#example-communication-test)) to be loaded for the Xbee to PC communication to function. The Arduino sketch uses the `SoftwareSerial` library and as a result baud rate mismatches between the Xbee and Arduino can easily occur. The `NewSoftSerial` library may be better in this regard.
 
 > If XCTU throws errors you may need to re-program the Arduino with the `uno_xbee` sketch with an appropriate baud rate and then re-discover it in XCTU.
 
@@ -93,7 +93,7 @@ Test some varying payload sizes and observe how the data rate changes.
 The recorded data cannot be exported as a file on your computer, though you can save the graph by right-clicking on it. 
 It is a good idea to take a screenshot of the entire window as well.
 
-It should be noted that the Throughput tool is ![not entirely accurate](https://www.digi.com/support/forum/66513/how-can-we-send-a-100-000-byte-packet-through-xctu).
+It should be noted that the Throughput tool is [not entirely accurate](https://www.digi.com/support/forum/66513/how-can-we-send-a-100-000-byte-packet-through-xctu).
 
 ![The Throughput tool in XCTU.](/images/throughput.png)
 
@@ -162,5 +162,5 @@ RESET is for most Xbee modules located at pin 5 (ground is on pin 10) but check 
 
 Also, try the Recovery tool in XCTU in order to forcibly flash an unresponsive unit with your desired firmware. 
 
-If all else fails you may need to download the old, XCTU legacy software, take a look at ![this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees) ![this](http://arduino.blogs.ua.sapo.pt/1874.html) and this ![this](https://www.instructables.com/id/Restoring-your-broken-XBee/).
+If all else fails you may need to download the old, XCTU legacy software, take a look at [this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees), [this](http://arduino.blogs.ua.sapo.pt/1874.html) and [this](https://www.instructables.com/id/Restoring-your-broken-XBee/).
 This may however not work for newer modules.
