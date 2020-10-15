@@ -140,13 +140,13 @@ If XCTU will not recognize your plugged-in Xbee radios, try this:
 - Remember to have the correct sketch for your shield (if you are using one) loaded on the Arduino per the instructions above.
 - Try different baud rates in the discovery process but remember that choosing *every single* baud rate in the list can cause the discovery process to take quite some time.
 - As a last resort, check *every single* setting and try the discovery again; it is probably going to take a *long* time.
+- Try the manual discovery (the button with the plus sign to the left of the discovery button) 
 
 **IMPORTANT:** Most problems are likely to stem from baud rate mismatches.
 
 If the Xbee radios cannot be discovered by XCTU even though you have followed all steps above you can try the following in XCTU in order to reset the Xbee radio to factory defaults:
 
-- First, try the manual discovery (the button with the plus sign to the left of the discovery button) 
-- If unsuccessful, open a serial console window (from the Tools menu)
+- Open a serial console window (from the Tools menu)
    - Select the serial port of the Xbee unit and open the connection using the baud rate that you *think* the Xbee is using.
    - In the input text window, quickly input `+++`. The Xbee radio should respond "OK".
    - Then, quickly input `ATRE` followed by the `Enter` key.
