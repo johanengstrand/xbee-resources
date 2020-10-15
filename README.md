@@ -86,7 +86,7 @@ Suggestions for doing a Throughput test:
 - You can now select a secondary local radio device. Select the other Xbee.
 - You can leave the rest of the settings as-is, though you may want to choose a longer time duration or "Loop infinitely".
 
-Xbee 3 (one in AT mode, one in API mode) at 115200 baud generally scored around 50 kbps using default settings. 
+Xbee 3 (one in AT mode, one in API mode) at 115 200 baud generally scored around 50 kbps using default settings. 
 Increasing the payload yielded (at most) a sustained 80 kbps or so.
 Test some varying payload sizes and observe how the data rate changes. 
 
@@ -112,6 +112,8 @@ Once the remote radio has been discovered its MAC address should be automaticall
 There are various settings here which are self-explanatory, though it is important to note that the TX interval works a little different than one might think: 
 If the TX interval is set to e.g. 250 ms packets will actually *not* be sent exactly 4 times per second, instead the transmitter will wait for confirmation that the packet was received correctly before sending the next packet, which causes packets to be sent less frequently than the user-defined setting.
 
+**IMPORTANT:** All other open XCTU consoles that are occupying an Xbee serial connection must be closed before the test! If not closed, XCTU may ruin the measurement due to lag!
+
 You can now run the test, though the recorded data is to my knowledge not available as a file on your computer; you can however save the graph itself by right-clicking on it.
 It is a good idea to take a screenshot of the entire window as well.
 
@@ -121,7 +123,7 @@ It is a good idea to take a screenshot of the entire window as well.
 
 In `./xctu_frames` there are various collections of frames for sending test messages, AT commands etc. from an Xbee radio in API mode. 
 Make sure to change the MAC address of each frame to that of your recipient Xbee.
-A message addressed to an all-zero MAC address will be broadcasted to all available radios.
+A message addressed to an all-zero MAC address will be sent as a broadcast message to all available radios.
 
 In `./xctu_packets` one can find some test packets that can be of use for local Xbee radios in Transparent (AT) mode.
 
