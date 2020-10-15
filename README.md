@@ -17,16 +17,14 @@ The Sparkfun Xbee shield requires a certain Arduino sketch ([found here under "T
 The official Arduino Wireless Proto Shield requires an empty Arduino sketch to be loaded in order to discover the Xbee radio in XCTU.
 The Xbee unit may need to be disconnected from the shield when programming the Arduino.
 
-Baud rates of 115 200 or possibly higher seem to work well with the Arduino Wireless Proto Shield.
-
 ![The Arduino Wireless Proto Shield.](https://store-cdn.arduino.cc/usa/catalog/product/cache/1/image/520x330/604a3538c15e081937dbfbd20aa60aad/A/0/A000064_featured_2.jpg)
 
 ### Sparkfun Xbee Explorer USB
 
-The Sparkfun Xbee Explorer USB is probably the best-performing and easiest to use unit if you do not need a microcontroller (or if the Xbee 3's Micropython capabilites in combination with some sensor is sufficient for your purposes).
+The Sparkfun Xbee Explorer USB is probably the best-performing and easiest to use unit if you do not require a microcontroller (or if the Xbee 3's Micropython capabilites in combination with some sensor is sufficient for your purposes).
 I would recommend using the Explorer USB for troubleshooting, instead of the Arduino/shield.
 
-On GNU/Linux this device shows up as e.g. `/dev/ttyUSB0` instead of `/dev/ttyACM0` like an Arduino/shield setup; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
+On GNU/Linux this device shows up as e.g. `/dev/ttyUSB0` instead of `/dev/ttyACM0` like the Arduino/shield setup would; keep this in mind in case e.g. port names are hard-coded into some of your scripts.
 
 ![The Sparkfun Xbee Explorer USB.](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffr.hobbytronics.co.uk%2Fimage%2Fcache%2Fdata%2Fsparkfun%2Fxbee_explorer_usb-250x250.jpg&f=1&nofb=1)
 
@@ -35,7 +33,7 @@ On GNU/Linux this device shows up as e.g. `/dev/ttyUSB0` instead of `/dev/ttyACM
 Xbee 3 radios come pre-loaded with Zigbee firmware, so if you want to use IEEE 802.15.4 (which has lower overhead than Zigbee) you must flash the 802.15.4 firmware, if it has not already been done by someone else.
 
 Discovering an Xbee radio in XCTU is quite simple:
-- Place your Xbee unit in a shield connected to an Arduino or in a USB interface.
+- Place your Xbee unit in a USB interface or a shield connected to an Arduino.
 - Connect the Arduino/USB interface to your computer with a USB cable and click "Discover radio modules" in the upper left hand corner of XCTU.
 - If your modules do not show up, check the [Troubshooting in XCTU](#troubleshooting-in-xctu) section down below.
    
