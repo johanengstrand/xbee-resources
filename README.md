@@ -164,3 +164,7 @@ Also, try the Recovery tool in XCTU in order to forcibly flash an unresponsive u
 
 If all else fails you may need to download the old, XCTU legacy software, take a look at [this](https://www.digi.com/support/knowledge-base/recovery-procedure-for-xbees), [this](http://arduino.blogs.ua.sapo.pt/1874.html) and [this](https://www.instructables.com/id/Restoring-your-broken-XBee/).
 This may however not work for newer modules.
+
+### Non-responsive unit when running MicroPython
+If MicroPython is active and the unit cannot be discovered in XCTU, try shorting the DIN pin to ground while resetting the module (with the designated reset button on the Sparkfun XBee Explorer USB). 
+Once this has been performed the unit should be discoverable again, or at least recoverable using one of the previously described methods.
